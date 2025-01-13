@@ -22,5 +22,20 @@ for (let index = 0; index < array.length; index++) {
 
 
 if (age >= 18) {
-    console.log("You are an adult");
+    console.log("Eres un adulto");
 }
+
+
+/* Declaracion de una fucnion  */
+
+function add(a, b) {
+    return a + b;
+}
+let result = add(5, 10);
+console.log(result);
+
+function sayHello(name) {
+    return `Hola como estas  ${name} ?`;
+
+}
+console.log(sayHello("John Doe"));
