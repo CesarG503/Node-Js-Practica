@@ -1,1 +1,1 @@
-Console.log('YOLO')
+Console.log('$$YOLO$$')
