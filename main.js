@@ -9,3 +9,5 @@ console.log(web);
 console.log(name);
 
 console.log(valores);
+
+console.log('require')
