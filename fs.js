@@ -33,3 +33,28 @@ fs.writeFileSync(ruta_archivo, nuevo_contenido, { flag: 'a'})
 'a+': Abre el archivo para lectura y anexar. Si el archivo no existe, se creará.
 'ax+': Similar a 'a+', pero fallará si el archivo ya existe.
 */
+
+
+
+// la funcion se llama callback
+fs.readFile(ruta_archivo,'utf-8',(error,data)=>{
+    if(error)
+        {
+            console.log(error);
+        }
+    else{
+            console.log(data)
+
+
+            fs.readFile(path.join(__dirname,'data','primero.txt'),'utf-8',function (error,data)
+            {
+                if(!error)
+                    {
+                        console.log(data)
+                    }
+            });
+        }
+})
+
+// solucioar call back help
+
