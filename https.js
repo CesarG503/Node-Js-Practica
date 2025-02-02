@@ -12,7 +12,11 @@ const port = 3000; //ver HTTP Port para saber que puerto usar
 const server = http.createServer((req, res) => {
 
     console.log(req.url); //nos llegan dos la ruta en la que estamos y el icono 
-
+    
+    //informacion de la Request 
+    console.log(`URL: ${req.url}`);
+    console.log(`Method: ${req.method}`);
+    console.log(`Headers: ${JSON.stringify(req.headers)}`);
     if(req.url === '/')
         {
             res.write('pagina general');

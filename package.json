@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "colors": "^1.4.0"
+  },
+  "name": "proyecto-node",
+  "version": "0.0.1",
+  "description": "proyecto node uso de node y npm ",
+  "main": "main.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ejecutar": "node main.js",
+    "dev": "echo \"No definido"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CesarG503/Node-Js-Practica.git"
+  },
+  "keywords": [
+    "proyecto",
+    "npm",
+    "node"
+  ],
+  "author": "cesar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CesarG503/Node-Js-Practica/issues"
+  },
+  "homepage": "https://github.com/CesarG503/Node-Js-Practica#readme"
+}
