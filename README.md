@@ -5,6 +5,9 @@
 - Os
 - Global
 - module export 
+- Http
+- npm
+
 
 ## Uso General de Node.js
 
@@ -22,3 +25,30 @@ Para ejecutar un script de Node.js, usa el comando `node` seguido del nombre del
 node nombre-del-archivo.js
 ```
 
+## comando npm 
+### Comandos npm más usados
+
+- `npm init`: Inicializa un nuevo proyecto de Node.js y crea un archivo `package.json`.
+- `npm install <paquete>`: Instala un paquete y lo añade a las dependencias del proyecto.
+- `npm install`: Instala todas las dependencias listadas en el archivo `package.json`.
+- `npm update`: Actualiza los paquetes instalados a sus versiones más recientes.
+- `npm uninstall <paquete>`: Desinstala un paquete y lo elimina de las dependencias del proyecto.
+- `npm list`: Lista todos los paquetes instalados en el proyecto.
+- `npm run <script>`: Ejecuta un script definido en el archivo `package.json`.
+- `npm start`: Ejecuta el script de inicio definido en el archivo `package.json`.
+- `npm test`: Ejecuta los tests definidos en el archivo `package.json`.
+- `npx <comando>`: Ejecuta un comando de un paquete sin necesidad de instalarlo globalmente.
+
+## Ejemplo de uso de npx con serve
+
+```bash
+npx serve
+```
+
+Esto iniciará un servidor en el puerto 5000 por defecto y servirá los archivos estáticos en el directorio actual. Si deseas especificar un directorio diferente o un puerto diferente, puedes hacerlo con las opciones `-s` y `-l` respectivamente:
+
+```bash
+npx serve -s build -l 3000
+```
+
+En este ejemplo, `serve` servirá los archivos en el directorio `build` en el puerto 3000.
