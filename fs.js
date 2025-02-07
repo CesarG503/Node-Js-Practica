@@ -1,24 +1,23 @@
-const fs = require('fs')
-const path = require('path')
+const fs = require('fs');
+const path = require('path');
+
+// Unify platform paths
+const dataDir = path.join(__dirname, 'data');
 
 // Lectura de archivos
-let archivo_de_texto = fs.readFileSync(path.join(__dirname, 'data', 'primero.txt'), 'utf-8'); //usamos join para acceder a la ruta compatible en todas las plataformas
+let archivo_de_texto = fs.readFileSync(path.join(dataDir, 'primero.txt'), 'utf-8');
+let archivo_de_texto_2 = fs.readFileSync(path.join(dataDir, 'segundo.txt'));
 
-let archivo_de_texto_2 = fs.readFileSync(path.join(__dirname, 'data', 'segundo.txt'));
-
-console.log(archivo_de_texto)
-console.log(archivo_de_texto_2.toString())
-
+console.log(archivo_de_texto);
+console.log(archivo_de_texto_2.toString());
 
 // Escritura de Archivos
-const ruta_archivo = path.join(__dirname,'data','tercero.txt');
+const ruta_archivo = path.join(dataDir, 'tercero.txt');
 let contenido = 'contenido del archivo nuevo';
 let nuevo_contenido = '\nNuevo contenido';
 
-fs.writeFileSync(ruta_archivo, contenido); // crea el archivo si no existe || trunca si existe 
-
- 
-fs.writeFileSync(ruta_archivo, nuevo_contenido, { flag: 'a'})
+fs.writeFileSync(ruta_archivo, contenido); // crea el archivo si no existe || trunca si existe
+fs.writeFileSync(ruta_archivo, nuevo_contenido, { flag: 'a' });
 
 /* flag: 
 'r': Abre el archivo para lectura. Si el archivo no existe, se lanzará un error.
@@ -34,27 +33,39 @@ fs.writeFileSync(ruta_archivo, nuevo_contenido, { flag: 'a'})
 'ax+': Similar a 'a+', pero fallará si el archivo ya existe.
 */
 
-
-
 // la funcion se llama callback
-fs.readFile(ruta_archivo,'utf-8',(error,data)=>{
-    if(error)
-        {
-            console.log(error);
-        }
-    else{
-            console.log(data)
+fs.readFile(ruta_archivo, 'utf-8', (error, data) => {
+    if (error) {
+        console.log(error);
+    } else {
+        console.log(data);
+
+        fs.readFile(path.join(dataDir, 'primero.txt'), 'utf-8', function (error, data) {
+            if (!error) {
+                console.log(data);
+            }
+        });
+    }
+});
+
+// Crear directorio si no existe
+const newDir = path.join(dataDir, 'newDir');
+if (!fs.existsSync(newDir)) {
+    fs.mkdirSync(newDir);
+}
+
+// Eliminar archivo
+const fileToDelete = path.join(dataDir, 'archivo_a_eliminar.txt');
+if (fs.existsSync(fileToDelete)) {
+    fs.unlinkSync(fileToDelete);
+}
+
+// Renombrar archivo
+const oldPath = path.join(dataDir, 'archivo_viejo.txt');
+const newPath = path.join(dataDir, 'archivo_nuevo.txt');
+if (fs.existsSync(oldPath)) {
+    fs.renameSync(oldPath, newPath);
+}
 
 
-            fs.readFile(path.join(__dirname,'data','primero.txt'),'utf-8',function (error,data)
-            {
-                if(!error)
-                    {
-                        console.log(data)
-                    }
-            });
-        }
-})
-
-// solucioar call back help
 
