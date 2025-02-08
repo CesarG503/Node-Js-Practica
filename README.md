@@ -32,6 +32,7 @@ node nombre-del-archivo.js
 ### Comandos npm más usados
 
 - `npm init`: Inicializa un nuevo proyecto de Node.js y crea un archivo `package.json`.
+- `npm init -y`: configuracion predeterminada 
 - `npm install <paquete>`: Instala un paquete y lo añade a las dependencias del proyecto.
 - `npm install`: Instala todas las dependencias listadas en el archivo `package.json`.
 - `npm update`: Actualiza los paquetes instalados a sus versiones más recientes.
@@ -55,3 +56,8 @@ npx serve -s build -l 3000
 ```
 
 En este ejemplo, `serve` servirá los archivos en el directorio `build` en el puerto 3000.
+
+
+## usar import y Export en javaScript 
+
+editamos el package.json : "type": "module", <- Agregamos esta propiedad
