@@ -7,7 +7,10 @@
 - module export 
 - Http
 - npm
-
+- promise 
+- fs/promise
+- event
+- stream
 
 ## Uso General de Node.js
 
